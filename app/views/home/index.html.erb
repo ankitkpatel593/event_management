@@ -1,2 +1,12 @@
-<h1>Root Page</h1>
-
+<table border="" align="center">
+	<tr>
+		<th>Event Name</th>	
+		<th>Action</th>	
+	</tr>
+	<% @events.each do |event| %>
+		<tr>
+			<td><%= event.name %></td>
+			<td><%= link_to "view", event_path(event) %></td>
+		</tr>
+	<% end %>
+</table>

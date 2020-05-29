@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Event.create!(name: 'Mega Event1', event_date: Date.tomorrow)
+Event.create!(name: 'Mega Event2', event_date: Date.tomorrow)
+Event.create!(name: 'Mega Event3', event_date: '30/05/2020')
+Event.create!(name: 'Mega Event4', event_date: '30/05/2020')
+Event.create!(name: 'Mega Event5', event_date: '30/05/2020')
+

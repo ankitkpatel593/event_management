@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  resources :events do
+  	member do 
+	    post 'attend'
+	    delete 'unattend'
+	  end
+  end
+  # get '/join_event', to: 'events#join_event', as: :join_event
   devise_for :users
   root 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

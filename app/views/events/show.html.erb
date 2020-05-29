@@ -1,0 +1,23 @@
+<% if @event.event_date >= Date.today %>
+	<% if @event.users.include?(current_user) %>
+		<%= link_to "Unattend", unattend_event_path(@event), method: :delete %>
+	<% else %>
+	<%= link_to "attend", attend_event_path(@event),  method: :post %>
+	<% end %>
+<% end %>
+
+<table border="" align="center">
+	<tr>
+		<th colspan="2"><%= @event.name %></th>
+	</tr>
+	<tr>
+		<th>Member Name</th>
+		<th>Gender</th>
+	</tr>
+	<% @event.users.each do |user| %>
+	<tr>
+		<td><%= user.name %></td>
+		<td><%= user.gender %></td>
+	</tr>
+	<% end %>
+</table>
